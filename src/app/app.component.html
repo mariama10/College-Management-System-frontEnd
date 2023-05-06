@@ -1,0 +1,75 @@
+<div class="sidebar">
+  <div class="logo-details" (click)="tabChange('')" routerLink="cms">
+    <i class="fas fa-institution"></i>
+    <span class="logo_name">CMS</span>
+  </div>
+  <ul class="nav-links">
+    <li (click)="tabChange('Dashboard')">
+      <a routerLink="dashboard">
+        <i class="fa fa-home"></i>
+        <span class="link_name">Dashboard</span>
+      </a>
+      <ul class="sub-menu blank" routerLink="dashboard">
+        <li><a class="link_name" routerLink="dashboard">Home</a></li>
+      </ul>
+    </li>
+
+    <li (click)="tabChange('Add Students')">
+      <a routerLink="addStudent">
+        <i class="fa fa-user-plus"></i>
+        <span class="link_name">Add Students</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" href="#">Add Students</a></li>
+      </ul>
+    </li>
+    <li (click)="tabChange('Manage Students')">
+      <a routerLink="studentsList">
+        <i class="fa fa-user-cog"></i>
+        <span class="link_name" routerLinkActive="active">Manage Students</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" href="#">Manage Students</a></li>
+      </ul>
+    </li>
+
+    <li (click)="tabChange('Add Courses')">
+      <a routerLink="addCourses">
+        <i class="fa fa-plus-square"></i>
+        <span class="link_name">Add Courses</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" href="#">Add Courses</a></li>
+      </ul>
+    </li>
+    <li (click)="tabChange('Manage Courses')">
+      <a routerLink="coursesList">
+        <i class="fa fa-th-list"></i>
+        <span class="link_name">Manage Courses</span>
+      </a>
+      <ul class="sub-menu blank">
+        <li><a class="link_name" href="#">Manage Courses</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <div class="profile-details">
+        <div class="profile-content">
+          <img src="assets/admin.jpg" />
+        </div>
+        <div class="name-job">
+          <div class="profile_name">Mariam Ashfaq</div>
+          <div class="job">Admin</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<section class="home-section">
+  <div class="home-content navbar navbar-expand-md sticky-top">
+    <i class="bx bx-menu" (click)="myFunc()"></i>
+    <span class="text"> {{ id }}</span>
+  </div>
+  <router-outlet></router-outlet>
+</section>

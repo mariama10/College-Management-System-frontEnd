@@ -1,0 +1,155 @@
+<div class="container-xl px-4 mt-4">
+  <hr class="mt-0 mb-4" />
+  <div class="row">
+    <div class="col-xl-4">
+      <div class="card mb-4 mb-xl-0">
+        <div class="card-header">Profile Picture</div>
+        <div class="card-body text-center">
+          <img
+            class="img-account-profile rounded-circle mb-2"
+            alt="img-account-profile"
+            src="{{
+              (student.gender == 'M' &&
+                'https://bootdey.com/img/Content/avatar/avatar6.png') ||
+                'https://bootdey.com/img/Content/avatar/avatar3.png'
+            }}"
+          />
+          <div class="small font-italic text-muted mb-4"></div>
+          <button class="btn btn-primary" type="button" (click)="viewStudent()">
+            ID: {{ student.sid }}
+            <br />
+            Email: {{ student.email }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8">
+      <div class="card mb-4">
+        <div class="card-header">Account Details</div>
+        <div class="card-body">
+          <form #editForm="ngForm">
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputFirstName"
+                  >First name</label
+                >
+                <input
+                  class="form-control"
+                  id="inputFirstName"
+                  type="text"
+                  placeholder="First name"
+                  [(ngModel)]="student.fname"
+                  name="fname"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputLastName">Last name</label>
+                <input
+                  class="form-control"
+                  id="inputLastName"
+                  type="text"
+                  placeholder="Last name"
+                  [(ngModel)]="student.lname"
+                  name="lname"
+                />
+              </div>
+            </div>
+
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputPhoneNumber"
+                  >Phone Number</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  ng
+                  placeholder="Phone Number"
+                  [(ngModel)]="student.phoneNumber"
+                  name="phoneNumber"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputInactive">Inactive</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="True/False"
+                  [(ngModel)]="student.inactive"
+                  name="inactive"
+                />
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="small mb-1" for="inputAddress">Address</label>
+              <input
+                class="form-control"
+                type="address"
+                placeholder="Address"
+                [(ngModel)]="student.address"
+                name="address"
+              />
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputState">State</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  ng
+                  placeholder="State"
+                  [(ngModel)]="student.state"
+                  name="state"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputCountry">Country</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Country"
+                  [(ngModel)]="student.country"
+                  name="country"
+                />
+              </div>
+            </div>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputMajor">Major</label>
+                <input
+                  class="form-control"
+                  type="tel"
+                  placeholder="Major"
+                  [(ngModel)]="student.major"
+                  name="major"
+                />
+              </div>
+              <div class="col-md-6">
+                <label class="small mb-1" for="inputStatus"
+                  >Degree Program</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Bachlors"
+                  [(ngModel)]="student.degree"
+                  capitalize
+                  name="degree"
+                />
+              </div>
+            </div>
+
+            <!-- Save changes button-->
+            <button
+              (click)="onSubmit(editForm.value)"
+              class="btn btn-primary"
+              type="button"
+            >
+              Save changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

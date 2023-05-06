@@ -1,0 +1,121 @@
+<div class="container">
+  <section class="panel">
+    <!-------->
+    <div class="row" id="boxes">
+      <div class="col-xl-3 col-md-6">
+        <div class="card bg-pattern">
+          <div class="card-body" (click)="getCourses('All')">
+            <div class="float-right">
+              <i class="fas fa-book-open text-primary h4 ml-3"></i>
+            </div>
+            <h5 class="font-size-20 mt-0 pt-1">{{ totalCourses }}</h5>
+            <p class="text-muted mb-0">Total Courses</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <div class="card bg-pattern">
+          <div class="card-body" (click)="getCourses('false')">
+            <div class="float-right">
+              <i class="fas fa-book-reader text-primary h4 ml-3"></i>
+            </div>
+            <h5 class="font-size-20 mt-0 pt-1">{{ activeCourses }}</h5>
+            <p class="text-muted mb-0">Active Courses</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <div class="card bg-pattern">
+          <div class="card-body" (click)="getCourses('true')">
+            <div class="float-right">
+              <i class="fa fa-file text-primary h4 ml-3"></i>
+            </div>
+            <h5 class="font-size-20 mt-0 pt-1">{{ inactiveCourses }}</h5>
+            <p class="text-muted mb-0">Inactive Courses</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <div class="card" id="search-card">
+          <div class="card-body" id="search-icon">
+            <form>
+              <div class="form-group mb-0">
+                <label>Search</label>
+                <div class="input-group mb-0">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search..."
+                    aria-describedby="project-search-addon"
+                    (keyup)="onNameKeyUp($event)"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="btn btn-danger"
+                      type="button"
+                      id="project-search-addon"
+                    >
+                      <i class="fa fa-search search-icon font-12"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!----------------->
+    <table class="table table-hover p-table">
+      <thead>
+        <tr>
+          <th>Course Name</th>
+          <th>Credits</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Semester</th>
+          <th>Status</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let course of allCourses">
+        <tr>
+          <td class="p-name">
+            <div class="d-flex flex-column flex-lg-row">
+              <span class="avatar avatar-text rounded-3 me-4 bg-warning mb-2">{{
+                course.type
+              }}</span>
+              <div class="col-sm-5">
+                <h4 class="h5">{{ course.name }}</h4>
+                <span class="badge bg-secondary">{{ course.code }}</span>
+              </div>
+            </div>
+          </td>
+          <td>{{ course.credits }}</td>
+
+          <td class="p-team">{{ course.startDate }}</td>
+          <td>{{ course.endDate }}</td>
+          <td class="p-progress">
+            {{ course.semester }}
+          </td>
+          <td class="text-center">
+            <span
+              class="{{
+                (course.inactive && 'badge bg-danger') || 'badge bg-success'
+              }}"
+              >{{ (course.inactive && "Inactive") || "Active" }}</span
+            >
+          </td>
+          <td>
+            <a (click)="manageCourse(course.cid)" class="btn btn-info btn-xs"
+              ><i class="fa fa-pencil"></i>
+            </a>
+            <a (click)="deleteCourse(course.cid)" class="btn btn-danger btn-xs"
+              ><i class="fa fa-trash-o"></i>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

@@ -1,0 +1,459 @@
+<div class="container">
+  <div class="main-body">
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img
+                src="{{
+                  (students.gender == 'M' &&
+                    'https://bootdey.com/img/Content/avatar/avatar6.png
+              ') ||
+                    'https://bootdey.com/img/Content/avatar/avatar3.png'
+                }}"
+                alt="Admin"
+                class="rounded-circle"
+                width="150"
+              />
+              <div class="mt-3">
+                <button class="btn btn-primary" (click)="updateStudent()">
+                  ID: {{ students.sid }}
+                </button>
+                <h4>{{ students.fname }} {{ students.lname }}</h4>
+                <p class="text-muted font-size-sm">
+                  {{ students.major }}
+                </p>
+                <p class="text-muted font-size-sm">
+                  {{ students.degree }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <ul class="list-group list-group-flush">
+            <li
+              [class.default]="id === 'default'"
+              (click)="tabChange('default')"
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">Progress</h6>
+            </li>
+            <li
+              [class.allCourses]="id === 'allCourses'"
+              (click)="tabChange('all')"
+              (click)="getStudentCourses()"
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">All Courses</h6>
+            </li>
+            <li
+              [class.color]="id === 'inProgressCourses'"
+              (click)="tabChange('in progress')"
+              (click)="getStudentCourses()"
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">In Progress Courses</h6>
+              <span class="text-secondary"></span>
+            </li>
+            <li
+              [class.color]="id === 'completedCourses'"
+              (click)="tabChange('completed')"
+              (click)="getStudentCourses()"
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">Completed Courses</h6>
+              <span class="text-secondary"></span>
+            </li>
+            <li
+              [class.color]="id === 'attemptedCourses'"
+              (click)="tabChange('attempted')"
+              (click)="getStudentCourses()"
+              class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+            >
+              <h6 class="mb-0">Attempted Courses</h6>
+              <span class="text-secondary"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <div class="card mb-3" *ngIf="id === 'default'">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Admission Date</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{ students.createdDate }}
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Date of Birth</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">{{ students.dob }}</div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Social Security</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">{{ students.ssn }}</div>
+            </div>
+            <hr />
+
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Phone Number</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{ students.phoneNumber }}
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{ students.email }}
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Address</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{ students.address }} {{ students.state }}
+                {{ students.country }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" *ngIf="id === 'default'">
+          <div class="col-sm-12">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="d-flex align-items-center mb-3">Credits Status:</h5>
+                <p>Credits In Progress</p>
+                <div class="progress mb-3" style="height: 5px">
+                  <div
+                    class="progress-bar bg-primary"
+                    role="progressbar"
+                    style="width: {{ (inProgressCredits / 120) * 100 }}%"
+                    aria-valuenow="80"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p>Credits Completed</p>
+                <div class="progress mb-3" style="height: 5px">
+                  <div
+                    class="progress-bar bg-success"
+                    role="progressbar"
+                    style="width: {{ (credits / 120) * 100 }}%"
+                    aria-valuenow="89"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p>Credit Attempted But Not Completed</p>
+                <div class="progress mb-3" style="height: 5px">
+                  <div
+                    class="progress-bar bg-danger progress-bar-stripped"
+                    role="progressbar"
+                    style="width: {{ (attemptedCredits / 120) * 100 }}%"
+                    aria-valuenow="55"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                  ></div>
+                </div>
+                <p>Total Progress</p>
+                <div class="progress" style="max-width: 100%">
+                  <div
+                    class="progress-bar bg-success"
+                    style="width: {{ (credits / 120) * 100 }}%"
+                  >
+                    {{ credits }}
+                  </div>
+                  <div
+                    class="progress-bar"
+                    style="width: {{ (inProgressCredits / 120) * 100 }}%"
+                  >
+                    {{ inProgressCredits }}
+                  </div>
+                  <div
+                    class="progress-bar bg-warning progress-bar-stripped"
+                    style="width: {{
+                      ((120 - credits - inProgressCredits) / 120) * 100
+                    }}%"
+                  >
+                    {{ 120 - credits - inProgressCredits }}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!----------ALL COURSES--------------->
+        <div class="container bootstrap snippets bootdey" *ngIf="id === 'all'">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="main-box no-header clearfix">
+                <span class="title all"> ALL COURSES</span>
+                <div class="main-box-body clearfix">
+                  <div class="table-responsive">
+                    <table class="table user-list">
+                      <thead>
+                        <tr>
+                          <th><span>Course</span></th>
+                          <th><span>Completed In</span></th>
+                          <th><span>Grade</span></th>
+                          <th><span>Credits</span></th>
+                          <th class="text-center"><span>&nbsp;</span></th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let studentCourses of coursesList">
+                        <tr>
+                          <td>
+                            <a href="#" class="user-link">{{
+                              studentCourses.course.name
+                            }}</a>
+                            <span class="user-subhead"
+                              >{{ studentCourses.course.type }}-{{
+                                studentCourses.course.code
+                              }}</span
+                            >
+                          </td>
+                          <td>
+                            {{ studentCourses.semester }}
+                            {{ studentCourses.year }}
+                          </td>
+                          <td>
+                            {{
+                              (studentCourses.status == "failed" && "F") ||
+                                (studentCourses.status == "withdrew" && "W") ||
+                                studentCourses.grade
+                            }}
+                          </td>
+                          <td>
+                            {{ studentCourses.course.credits }}
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="{{
+                                (studentCourses.status.toLowerCase() ==
+                                  'failed' &&
+                                  'badge bg-failed') ||
+                                  (studentCourses.status.toLowerCase() ==
+                                    'withdrew' &&
+                                    'badge bg-withdraw') ||
+                                  (studentCourses.status.toLowerCase() ==
+                                    'completed' &&
+                                    'badge bg-success') ||
+                                  'badge bg-progress'
+                              }}"
+                              >{{ studentCourses.status }}</span
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!------------INPROGRESS COURSES------------->
+        <div
+          class="container bootstrap snippets bootdey"
+          *ngIf="id === 'in progress'"
+        >
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="main-box no-header clearfix">
+                <span class="title inprogress"> INPROGRESS COURSES</span>
+                <div class="main-box-body clearfix">
+                  <div class="table-responsive">
+                    <table class="table user-list">
+                      <thead>
+                        <tr>
+                          <th><span>Course</span></th>
+                          <th><span>Completed In</span></th>
+                          <th><span>Grade</span></th>
+                          <th><span>Credits</span></th>
+                          <th class="text-center"><span>&nbsp;</span></th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let studentCourses of coursesList">
+                        <tr>
+                          <td>
+                            <a href="#" class="user-link">{{
+                              studentCourses.course.name
+                            }}</a>
+                            <span class="user-subhead"
+                              >{{ studentCourses.course.type }}-{{
+                                studentCourses.course.code
+                              }}</span
+                            >
+                          </td>
+                          <td class="time-info">
+                            {{ studentCourses.semester }}
+                            {{ studentCourses.year }}
+                          </td>
+                          <td>{{ studentCourses.grade }}</td>
+                          <td>
+                            {{ studentCourses.course.credits }}
+                          </td>
+                          <td class="text-center">
+                            <span class="badge bg-progress">{{
+                              studentCourses.status
+                            }}</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-------------COMPLETED COURSES------------>
+        <div
+          class="container bootstrap snippets bootdey"
+          *ngIf="id === 'completed'"
+        >
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="main-box no-header clearfix">
+                <span class="title completed"> COMPLETED COURSES</span>
+                <div class="main-box-body clearfix">
+                  <div class="table-responsive">
+                    <table class="table user-list">
+                      <thead>
+                        <tr>
+                          <th><span>Course</span></th>
+                          <th><span>Completed In</span></th>
+                          <th><span>Grade</span></th>
+                          <th><span>Credits</span></th>
+                          <th class="text-center"><span>&nbsp;</span></th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let studentCourses of coursesList">
+                        <tr>
+                          <td>
+                            <a href="#" class="user-link">{{
+                              studentCourses.course.name
+                            }}</a>
+                            <span class="user-subhead"
+                              >{{ studentCourses.course.type }}-{{
+                                studentCourses.course.code
+                              }}</span
+                            >
+                          </td>
+                          <td>
+                            {{ studentCourses.semester }}
+                            {{ studentCourses.year }}
+                          </td>
+                          <td>
+                            {{ studentCourses.grade }}
+                          </td>
+                          <td>
+                            {{ studentCourses.course.credits }}
+                          </td>
+                          <td class="text-center">
+                            <span class="badge bg-success">{{
+                              studentCourses.status
+                            }}</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-----------ATTEMPTED COURSES-------------->
+        <div
+          class="container bootstrap snippets bootdey"
+          *ngIf="id === 'attempted'"
+        >
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="main-box no-header clearfix">
+                <span class="title attempted"> ATTEMPTED COURSES</span>
+                <div class="main-box-body clearfix">
+                  <div class="table-responsive">
+                    <table class="table user-list">
+                      <thead>
+                        <tr>
+                          <th><span>Course</span></th>
+                          <th><span>Completed In</span></th>
+                          <th><span>Grade</span></th>
+                          <th><span>Credits</span></th>
+                          <th class="text-center"><span>&nbsp;</span></th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let studentCourses of coursesList">
+                        <tr>
+                          <td>
+                            <a href="#" class="user-link">{{
+                              studentCourses.course.name
+                            }}</a>
+                            <span class="user-subhead"
+                              >{{ studentCourses.course.type }}-{{
+                                studentCourses.course.code
+                              }}</span
+                            >
+                          </td>
+                          <td>
+                            {{ studentCourses.semester }}
+                            {{ studentCourses.year }}
+                          </td>
+                          <td>
+                            {{
+                              (studentCourses.status == "failed" && "F") || "W"
+                            }}
+                          </td>
+                          <td>
+                            {{ studentCourses.course.credits }}
+                          </td>
+                          <td class="text-center">
+                            <span
+                              class="{{
+                                (studentCourses.status == 'failed' &&
+                                  'badge bg-failed') ||
+                                  'badge bg-withdraw'
+                              }}"
+                              >{{ studentCourses.status }}</span
+                            >
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!------------------>
+      </div>
+    </div>
+  </div>
+</div>

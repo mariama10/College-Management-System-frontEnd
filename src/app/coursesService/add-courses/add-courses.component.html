@@ -1,0 +1,146 @@
+<div class="container">
+  <div class="contact__wrapper shadow-lg mt-n9">
+    <div class="row no-gutters">
+      <div class="col-lg-7 contact-form__wrapper p-5 order-lg-1">
+        <form
+          #addForm="ngForm"
+          action="POST"
+          class="contact-form form-validate"
+          novalidate="novalidate"
+        >
+          <div class="row">
+            <div class="col-sm-6 mb-3" id="nameInput">
+              <div class="form-group">
+                <label class="required-field" for="name">Course Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  ngModel
+                  name="name"
+                  placeholder="Course Name"
+                />
+              </div>
+            </div>
+
+            <div class="col-sm-6 mb-3" id="creditsInput">
+              <div class="form-group">
+                <label for="credits">Credits</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="credits"
+                  ngModel
+                  name="credits"
+                  placeholder="Credits"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6 mb-3" id="courseInfo">
+              <div class="form-group">
+                <label for="type">Type</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="type"
+                  ngModel
+                  name="type"
+                  placeholder="MATH"
+                />
+              </div>
+            </div>
+
+            <div class="col-sm-6 mb-3" id="courseInfo">
+              <div class="form-group">
+                <label for="code">Code</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="code"
+                  ngModel
+                  name="code"
+                  placeholder="1200"
+                />
+              </div>
+            </div>
+            <div class="col-sm-6 mb-3" id="courseInfo">
+              <div class="form-group">
+                <label class="required-field" for="semester">Semester</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="semester"
+                  ngModel
+                  name="semester"
+                  placeholder="Fall"
+                />
+              </div>
+            </div>
+            
+          </div>
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <div class="form-group">
+                <label class="required-field" for="date">Start Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="startDate"
+                  min="{{ minDate }}"
+                  ngModel
+                  name="startDate"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-sm-6 mb-3">
+              <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="endDate"
+                  min="{{ minDate }}"
+                  ngModel
+                  name="endDate"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col-sm-12 mb-3">
+              <div class="form-group">
+                <label class="required-field" for="message"
+                  >Course description:
+                </label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  ngModel
+                  name="description"
+                  rows="4"
+                  placeholder="This course teaches....."
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="col-sm-12 mb-3">
+              <button
+                type="submit"
+                name="submit"
+                class="btn btn-primary"
+                (click)="addCourse(addForm)"
+              >
+                Save Changes
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

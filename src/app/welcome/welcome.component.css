@@ -1,0 +1,72 @@
+.error-wrapper {
+  background-color: black;
+  height: 100vh;
+  padding-top: 5%;
+}
+
+.error-wrapper .error-container {
+  -webkit-transform: skew(0deg, -10deg);
+  -moz-transform: skew(0deg, -10deg);
+  -o-transform: skew(0deg, -10deg);
+  -ms-transform: skew(0deg, -10deg);
+  transform: skew(0deg, -10deg);
+  background-color: #ff1616d7;
+  border-bottom: 2px white groove;
+  border-top: 2px white groove;
+  box-shadow: 0 0.16875rem 1.5875rem rgba(255, 255, 255, 0.941),
+    0 0.9375rem 1.20625rem rgba(57, 56, 56, 0.158),
+    0 0.25rem 0.33125rem rgb(134, 26, 42),
+    0 0.125rem 0.1875rem rgb(255, 105, 105);
+  margin-top: 42px;
+  padding: 50px;
+  height: 57vh;
+}
+
+.error-wrapper .error-container .error {
+  -webkit-transform: skew(0deg, 10deg);
+  -moz-transform: skew(0deg, 10deg);
+  -o-transform: skew(0deg, 10deg);
+  -ms-transform: skew(0deg, 10deg);
+  transform: skew(0deg, 10deg);
+  margin: 0 auto;
+  text-align: center;
+  /*width: 350px;*/
+}
+
+.error-wrapper .error-container .error .error-title {
+  font-size: 28px;
+  color: black;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: capitalize;
+}
+
+.error-wrapper .error-container .error .error-number {
+  font-size: 70px;
+  font-weight: 700;
+  color: rgb(0 0 0);
+  letter-spacing: 5px;
+  text-shadow: 0 3px 0 #ffffff, 0 14px 10px rgba(252, 249, 249, 0.959),
+    0 24px 2px rgb(243, 58, 58), 0 34px 30px rgb(241, 75, 75);
+}
+
+@media only screen and (max-width: 600px) {
+  .error-wrapper {
+    padding-top: 5%;
+  }
+  .error-wrapper .error-container {
+    -webkit-transform: skew(0deg, -5deg);
+    -moz-transform: skew(0deg, -5deg);
+    -o-transform: skew(0deg, -5deg);
+    -ms-transform: skew(0deg, -5deg);
+    transform: skew(0deg, -5deg);
+  }
+  .error-wrapper .error-container .error {
+    -webkit-transform: skew(0deg, 5deg);
+    -moz-transform: skew(0deg, 5deg);
+    -o-transform: skew(0deg, 5deg);
+    -ms-transform: skew(0deg, 5deg);
+    transform: skew(0deg, 5deg);
+    width: auto;
+  }
+}

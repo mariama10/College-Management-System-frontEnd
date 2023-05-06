@@ -1,0 +1,372 @@
+<div class="container-xl px-4 mt-4">
+  <div class="row">
+    <div class="col-xl-8">
+      <div class="card mb-4">
+        <div class="card-header">Basic Information</div>
+        <div class="card-body">
+          <form #addForm="ngForm" action="POST" ngNativeValidate #form>
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6" id="threeCols">
+                <label class="small mb-1" for="inputFirstName"
+                  >First name</label
+                >
+                <input
+                  class="form-control"
+                  id="inputFirstName"
+                  type="text"
+                  placeholder="First name"
+                  name="fname"
+                  required
+                  ngModel
+                />
+              </div>
+              <div class="col-md-6" id="threeCols">
+                <label class="small mb-1" for="inputLastName">Last name</label>
+                <input
+                  class="form-control"
+                  id="inputLastName"
+                  type="text"
+                  placeholder="Last name"
+                  name="lname"
+                  ngModel
+                />
+              </div>
+              <div class="col-md-6" id="threeCols">
+                <label class="small mb-1" for="inputLastName">Gender</label>
+                <input
+                  class="form-control"
+                  id="inputMajor"
+                  type="text"
+                  pattern="[A-Za-z]"
+                  max-length="1"
+                  placeholder="M/F"
+                  name="gender"
+                  ngModel
+                />
+              </div>
+            </div>
+
+            <div class="row gx-3 mb-3">
+              <div class="col-md-6" id="threeCols">
+                <label class="small mb-1" for="inputPhoneNumber"
+                  >Phone Number</label
+                >
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="732-732-7321"
+                  name="phoneNumber"
+                  ngModel
+                />
+              </div>
+              <div class="col-md-6" id="threeCols">
+                <label class="small mb-1" for="inputSSN">Social Security</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="123-123-1234"
+                  name="ssn"
+                  ngModel
+                />
+              </div>
+
+              <div class="col-sm-6 mb-3" id="threeCols">
+                <div class="form-group">
+                  <label class="required-field small mb-1" for="date"
+                    >Date of Birth</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="startDate"
+                    max="{{ maxDate }}"
+                    ngModel
+                    name="startDate"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="card-header headers">Address</div>
+            <div class="mb-3" id="address">
+              <label class="small mb-1" for="inputAddress">Address</label>
+              <input
+                class="form-control"
+                type="address"
+                placeholder="Street, City"
+                name="address"
+                ngModel
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="form-label">State</label>
+                  <select
+                    class="select2 form-control select2-hidden-accessible"
+                    data-select2-placeholder="Select state"
+                    data-select2-id="select2-data-4-680y"
+                    tabindex="-1"
+                    aria-hidden="true"
+                    ngModel
+                    name="state"
+                  >
+                    <option value="" selected disabled hidden>State</option>
+                    <option value="AL">Alabama</option>
+                    <option value="CA">California</option>
+                    <option value="DE">Delaware</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="KS">Kansas</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NY">New York</option></select
+                  ><span
+                    class="select2 select2-container select2-container--bootstrap-5"
+                    dir="ltr"
+                    data-select2-id="select2-data-5-np4c"
+                    style="width: 391px"
+                    ><span class="selection"
+                      ><span
+                        class="select2-selection select2-selection--single"
+                        role="combobox"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        tabindex="0"
+                        aria-disabled="false"
+                        aria-labelledby="select2-2fn7-container"
+                        aria-controls="select2-2fn7-container"
+                        ><span
+                          class="select2-selection__arrow"
+                          role="presentation"
+                          ><b role="presentation"></b></span></span></span
+                    ><span class="dropdown-wrapper" aria-hidden="true"></span
+                  ></span>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="mb-3">
+                  <label class="small mb-1" for="inputState">Country</label>
+                  <select
+                    class="select2 form-control select2-hidden-accessible"
+                    data-select2-placeholder="Select state"
+                    data-select2-id="select2-data-4-680y"
+                    tabindex="-1"
+                    aria-hidden="true"
+                    ngModel
+                    name="country"
+                  >
+                    <option value="" selected disabled hidden>Country</option>
+                    <option value="United States">United States</option>
+                    <option value="Afghanistan">Afghanistan</option>
+                    <option value="Bahamas">Bahamas</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="China">China</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Gambia">Gambia</option>
+                    <option value="Pakistan">Pakistan</option></select
+                  ><span
+                    class="select2 select2-container select2-container--bootstrap-5"
+                    dir="ltr"
+                    data-select2-id="select2-data-5-np4c"
+                    style="width: 391px"
+                    ><span class="selection"
+                      ><span
+                        class="select2-selection select2-selection--single"
+                        role="combobox"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        tabindex="0"
+                        aria-disabled="false"
+                        aria-labelledby="select2-2fn7-container"
+                        aria-controls="select2-2fn7-container"
+                        ><span
+                          class="select2-selection__arrow"
+                          role="presentation"
+                          ><b role="presentation"></b></span></span></span
+                    ><span class="dropdown-wrapper" aria-hidden="true"></span
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-header headers">Degree</div>
+            <div class="row">
+              <div class="col-lg-6" id="threeCols">
+                <div class="mb-3">
+                  <label class="small mb-1" for="inputState">Major</label>
+                  <select
+                    class="select2 form-control select2-hidden-accessible"
+                    data-select2-placeholder="Select country"
+                    data-select2-id="select2-data-1-gy14"
+                    tabindex="-1"
+                    aria-hidden="true"
+                    ngModel
+                    name="major"
+                  >
+                    <option value="" selected disabled hidden>Major</option>
+                    <option value="Acting">Acting</option>
+                    <option value="Accounting">Accounting</option>
+                    <option value="Architecture">Architecture</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="History">History</option>
+                    <option value="Psychology">Psychology</option>
+                    <option value="Undecided" selected="selected">
+                      Undecided
+                    </option></select
+                  ><span
+                    class="select2 select2-container select2-container--bootstrap-5"
+                    dir="ltr"
+                    data-select2-id="select2-data-2-46y9"
+                    style="width: 391px"
+                    ><span class="selection"
+                      ><span
+                        class="select2-selection select2-selection--single"
+                        role="combobox"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        tabindex="0"
+                        aria-disabled="false"
+                        aria-labelledby="select2-vp8l-container"
+                        aria-controls="select2-vp8l-container"
+                        ><span
+                          class="select2-selection__arrow"
+                          role="presentation"
+                          ><b role="presentation"></b></span></span></span
+                    ><span class="dropdown-wrapper" aria-hidden="true"></span
+                  ></span>
+                </div>
+              </div>
+
+              <div class="col-lg-6" id="threeCols">
+                <div class="mb-3">
+                  <label class="small mb-1" for="inputState"
+                    >Degree Program</label
+                  >
+                  <select
+                    class="select2 form-control select2-hidden-accessible"
+                    data-select2-placeholder="Select state"
+                    data-select2-id="select2-data-4-680y"
+                    tabindex="-1"
+                    aria-hidden="true"
+                    ngModel
+                    name="degree"
+                  >
+                    <option value="" selected disabled hidden>Degree</option>
+                    <option value="Associate of Applied Science">
+                      Associate of Applied Science
+                    </option>
+                    <option value="Associate of Arts">Associate of Arts</option>
+                    <option value="Associate of Science">
+                      Associate of Science
+                    </option>
+                    <option value="Bachelor of Applied Science">
+                      Bachelor of Applied Science
+                    </option>
+                    <option value="Bachelor of Applied Science">
+                      Bachelor of Applied Science
+                    </option>
+                    <option value="Bachelor of Arts">Bachelor of Arts</option>
+                    <option value="Bachelor of Business Administration">
+                      Bachelor of Business Administration
+                    </option>
+                    <option value="Bachelor of Science">
+                      Bachelor of Science
+                    </option>
+                    <option value="Master of Business Administration">
+                      Master of Business Administration
+                    </option>
+                    <option value="Master of Fine Arts">
+                      Master of Fine Arts
+                    </option>
+                    <option value="Master of Science">Master of Science</option>
+                    <option value="Doctor of Business Administration">
+                      Doctor of Business Administration
+                    </option>
+                    <option value="Doctor of Medicine">
+                      Doctor of Medicine
+                    </option></select
+                  ><span
+                    class="select2 select2-container select2-container--bootstrap-5"
+                    dir="ltr"
+                    data-select2-id="select2-data-5-np4c"
+                    style="width: 391px"
+                    ><span class="selection"
+                      ><span
+                        class="select2-selection select2-selection--single"
+                        role="combobox"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        tabindex="0"
+                        aria-disabled="false"
+                        aria-labelledby="select2-2fn7-container"
+                        aria-controls="select2-2fn7-container"
+                        ><span
+                          class="select2-selection__arrow"
+                          role="presentation"
+                          ><b role="presentation"></b></span></span></span
+                    ><span class="dropdown-wrapper" aria-hidden="true"></span
+                  ></span>
+                </div>
+              </div>
+
+              <div class="col-lg-6" id="threeCols">
+                <div class="mb-3">
+                  <label class="small mb-1" for="inputState"
+                    >Degree Status
+                  </label>
+                  <select
+                    class="select2 form-control select2-hidden-accessible"
+                    data-select2-placeholder="Select state"
+                    data-select2-id="select2-data-4-680y"
+                    tabindex="-1"
+                    aria-hidden="true"
+                    ngModel
+                    name="status"
+                  >
+                    <option value="" selected disabled hidden>Status</option>
+                    <option value="Undergraduate">Undergraduate</option>
+                    <option value="Grduate">Graduate</option></select
+                  ><span
+                    class="select2 select2-container select2-container--bootstrap-5"
+                    dir="ltr"
+                    data-select2-id="select2-data-5-np4c"
+                    style="width: 391px"
+                    ><span class="selection"
+                      ><span
+                        class="select2-selection select2-selection--single"
+                        role="combobox"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        tabindex="0"
+                        aria-disabled="false"
+                        aria-labelledby="select2-2fn7-container"
+                        aria-controls="select2-2fn7-container"
+                        ><span
+                          class="select2-selection__arrow"
+                          role="presentation"
+                          ><b role="presentation"></b></span></span></span
+                    ><span class="dropdown-wrapper" aria-hidden="true"></span
+                  ></span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary"
+              (click)="'form.valid' ? addStudent(addForm) : null"
+            >
+              Save changes
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

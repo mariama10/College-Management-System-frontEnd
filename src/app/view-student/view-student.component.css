@@ -1,0 +1,213 @@
+body {
+  margin-top: 20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;
+}
+.main-body {
+  padding: 15px;
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
+}
+
+.gutters-sm {
+  margin-right: -8px;
+  margin-left: -8px;
+}
+
+.gutters-sm > .col,
+.gutters-sm > [class*="col-"] {
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.mb-3,
+.my-3 {
+  margin-bottom: 1rem !important;
+}
+
+.bg-gray-300 {
+  background-color: #e2e8f0;
+}
+.h-100 {
+  height: 100% !important;
+}
+.shadow-none {
+  box-shadow: none !important;
+}
+
+.default {
+  color: white;
+  background-color: red;
+}
+
+li:hover {
+  background-color: rgb(179, 176, 176);
+  color: white;
+}
+
+p {
+  margin-bottom: 0;
+}
+span.title {
+  font-size: 1.2rem;
+  align-items: center;
+  text-align: center;
+  display: block;
+  color: black;
+  margin: auto;
+  max-width: 30%;
+  border: 2px blue double;
+  border-radius: 8px;
+  padding: 2px 2px;
+  font-weight: bolder;
+  margin-bottom: 6px;
+  margin-top: -10px;
+}
+.badge {
+  font-size: 10px;
+  padding: 4px 8px;
+}
+.btn-primary:hover {
+  background-color: red;
+}
+/*------------------------------ALL COURSES------------------------------------*/
+.all {
+  background-image: linear-gradient(
+    to bottom right,
+    green,
+    rgb(80, 171, 80),
+    rgb(2, 219, 2),
+    rgb(211, 255, 211),
+    #3498db,
+    #6ec5ff,
+    #a2daff,
+    #e2f3ff,
+    rgb(240, 190, 190),
+    rgb(255, 146, 146),
+    rgb(237, 73, 73),
+    red
+  );
+}
+
+/*------------------------------INPROGRESS COURSES------------------------------------*/
+.bg-progress {
+  background-color: #3498db;
+}
+.inprogress {
+  background-color: #3498db;
+}
+/*------------------------------COMPLETED COURSES------------------------------------*/
+.completed {
+  background-color: green;
+}
+body {
+  background: #eee;
+}
+.main-box.no-header {
+  padding-top: 20px;
+}
+.main-box {
+  background: #ffffff;
+  -webkit-box-shadow: 1px 1px 2px 0 #cccccc;
+  -moz-box-shadow: 1px 1px 2px 0 #cccccc;
+  -o-box-shadow: 1px 1px 2px 0 #cccccc;
+  -ms-box-shadow: 1px 1px 2px 0 #cccccc;
+  box-shadow: 1px 1px 2px 0 #cccccc;
+  margin-bottom: 16px;
+  -webikt-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.table a.table-link.danger {
+  color: #e74c3c;
+}
+.label {
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-weight: 600;
+}
+.user-list tbody td .user-subhead {
+  font-size: 0.7em;
+  font-style: italic;
+}
+.user-list tbody td .user-link {
+  display: block;
+  font-size: 1em;
+  padding-top: 3px;
+  margin-left: 60px;
+}
+
+a {
+  color: #3498db;
+  outline: none !important;
+}
+.user-list tbody td > img {
+  position: relative;
+  max-width: 50px;
+  float: left;
+  margin-right: 15px;
+}
+
+.table thead tr th {
+  text-transform: uppercase;
+  font-size: 0.875em;
+}
+.table thead tr th {
+  border-bottom: 2px solid #e7ebee;
+}
+.table tbody tr td:first-child {
+  font-size: 1.125em;
+  font-weight: 300;
+}
+.table tbody tr td {
+  font-size: 0.775em;
+  vertical-align: middle;
+  border-top: 1px solid #e7ebee;
+  padding: 12px 8px;
+}
+a:hover {
+  text-decoration: none;
+}
+.user-list tbody td .user-link {
+  margin-left: 2px;
+}
+td {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+a {
+  text-transform: lowercase;
+  text-transform: capitalize;
+}
+
+/*------------------------------ATTEMPTED COURSES------------------------------------*/
+
+.bg-failed {
+  background-color: red;
+}
+.bg-withdraw {
+  background-color: grey;
+}
+.attempted {
+  background-color: red;
+}

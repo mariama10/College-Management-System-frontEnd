@@ -1,0 +1,111 @@
+body {
+  margin-top: 20px;
+  background: #eee;
+}
+.contact-info__wrapper {
+  background-color: #8f0000;
+  color: darkred;
+  color: #fff;
+}
+.contact-info__wrapper {
+  overflow: hidden;
+  border-radius: 0.625rem 0.625rem 0 0;
+}
+
+@media (min-width: 1024px) {
+  .contact-info__wrapper {
+    border-radius: 0 0.625rem 0.625rem 0;
+    padding: 5rem !important;
+  }
+}
+.contact-info__list span.position-absolute {
+  left: 0;
+}
+.z-index-101 {
+  z-index: 101;
+}
+.list-style--none {
+  list-style: none;
+}
+.contact__wrapper {
+  background-color: #fff;
+  border-radius: 0 0 0.625rem 0.625rem;
+}
+
+@media (min-width: 1024px) {
+  .contact__wrapper {
+    border-radius: 0.625rem 0 0.625rem 0.625rem;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-form__wrapper {
+    padding: 5rem !important;
+  }
+}
+.shadow-lg,
+.shadow-lg--on-hover:hover {
+  box-shadow: 0 1rem 3rem rgba(132, 138, 163, 0.1) !important;
+}
+
+.container {
+  margin-top: 20px;
+  padding-left: 2px;
+}
+.btn-primary {
+  background-color: red;
+}
+#nameInput {
+  flex: none;
+  max-width: 72%;
+}
+#creditsInput {
+  flex: none;
+  max-width: 28%;
+}
+
+.form-control {
+  text-transform: uppercase;
+  color: #f21111d6;
+}
+h3 {
+  text-transform: uppercase;
+}
+
+.shadow-lg,
+.shadow-lg:hover {
+  box-shadow: 0 1rem 3rem rgb(0 49 255 / 10%) !important;
+  margin-left: 100px;
+  max-width: 850px;
+}
+
+@media (max-width: 1200px) {
+  .contact__wrapper {
+    border-radius: 0.625rem 0 0.625rem 0.625rem;
+    margin-left: 10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.contact-form {
+  margin-top: -40px;
+}
+.contact-form__wrapper {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+  padding-top: 4rem !important;
+  padding-bottom: 1rem !important;
+}
+
+#courseInfo {
+  max-width: 33.33%;
+}
+
+input[type="date"]:invalid::-webkit-datetime-edit {
+  color: #757575;
+}
