@@ -1,27 +1,20 @@
 # CMSApp
 
+Designed for employees or administrators working at colleges to handle student and course data. It offers a range of features that enable users to view different information about students and courses, such as the most popular majors, courses, degrees, and students from various states and countries.
+ 
+The website's functionality is simple yet effective. An administrator can add a student with basic information about their contact, address, and degree. Once the student is added, an automatic unique ID is assigned to the student, and a unique email is generated based on their first and last name.
+
+If a student is no longer attending college, they can be marked as inactive, with reasons such as taking a break or already having graduated. This allows the administrator to keep an accurate record of active students and reactivate them when they return. The same procedure is followed for courses where administrators can update or delete any course, as necessary.
+
+Another feature of the website is its ability to view a student's credit and course information, providing a comprehensive overview of their academic progress!
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+Student, Courses, and Student_Courses services to connect with backend APIs, component folder for all side navbar options, ng Model to bind form's all input values, use of router to share id among components, and chart libaray for dashboard report.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
